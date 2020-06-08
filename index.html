@@ -9,43 +9,53 @@
   <title>待辦清單</title>
 </head>
 <body>
-  <h1>我的待辦事項清單</h1>
-  <hr>
-  <!-- 段落 -->
-  <p>
-    日期：2020/06/08
-  </p>
-  <ul>
-    <li>今天到期：1</li>
-    <li>逾期：2</li>
-  </ul>
-  <table  border="1"  width="1920">
-    <tbody>
-      <tr >
-        <th><i class="fas fa-check"></i> 完成</th>
-        <th>描述</th>
-        <th>到期日</th>
-        <th>優先順序</th>
-        <th>指派對象</th>
-        <th>地點</th>
-      </tr>
-      <tr>
-        <td>完成</td>
-        <td>撰寫程式</td>
-        <td>2020/06/08</td>
-        <td>低</td>
-        <td>李大頭</td>
-        <td>研討室</td>
-      </tr>
-      <tr>
-        <td>未完成</td>
-        <td>開會</td>
-        <td>2020/06/08</td>
-        <td>高</td>
-        <td>李大頭、主任、XX科</td>
-        <td>4F會議室</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container">
+    <h1>我的待辦事項清單</h1>
+    <hr>
+    <div class="row">
+        <div class="col-sm-3">
+            <p>
+              日期：2020/06/08
+            </p>
+        </div>
+        <div class="col-sm-9">
+            <ul>
+                <li>今天到期：1</li>
+                <li>逾期：2</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <table>
+      <tbody>
+        <tr >
+          <th><i class="fas fa-check"></i> 完成</th>
+          <th>描述</th>
+          <th>到期日</th>
+          <th>優先順序</th>
+          <th>指派對象</th>
+          <th>地點</th>
+        </tr>
+        <tr>
+          <td>完成</td>
+          <td>撰寫程式</td>
+          <td>2020/06/08</td>
+          <td>低</td>
+          <td>李大頭</td>
+          <td>研討室</td>
+        </tr>
+        <tr>
+          <td>未完成</td>
+          <td>開會</td>
+          <td>2020/06/08</td>
+          <td>高</td>
+          <td>李大頭、主任、XX科</td>
+          <td>4F會議室</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </body>
 </html>
