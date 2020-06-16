@@ -19,9 +19,9 @@ $smarty->assign('navbar', $navbar);
 // 二維陣列
 $content = array(
     "1" => array('directions' => "撰寫程式", 'end' => "2020/06/08"), //用逗號結尾
-    "2" => array('directions' => "開會", 'end' => "2020/06/10"), //最後一句沒有標點
+    "2" => array('directions' => "開會", 'end' => "2020/06/10"),
 );
-// print_r($content1);
+// print_r($content);
 // $content[1]['directions'] = "撰寫程式";
 // $content[1]['end']        = "2020/06/08";
 // $content[2]['directions'] = "開會";
