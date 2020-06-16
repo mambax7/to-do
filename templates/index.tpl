@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="css/fontawesome_css/all.css">
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <title>待辦清單</title>
+  <title>{$title}</title>
 </head>
 <body>
   <div class="container">
     <img src="images/logo.jpg" class="rounded-circle mx-auto d-block" width="100%" height="200rem" alt="logo">
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
         <a class="navbar-brand" href="#">
-            <h1>我的待辦事項清單</h1>
+            <h1>{$header}</h1>
         </a>
 
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -24,12 +24,12 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav  ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">回首頁 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="post.html">發布待辦事項</a>
-                </li>
+<li class="nav-item active">
+    <a class="nav-link" href="#">{$navbar.home} <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="post.html">{$navbar.post}</a>
+</li>
             </ul>
         </div>
     </nav>
@@ -52,47 +52,27 @@
     <table class="table table-striped table-bordered table-hover table-sm">
       <thead  class="thead-dark">
         <tr>
-          <th><i class="fas fa-check"></i> 完成</th>
           <th>描述</th>
           <th>到期日</th>
-          <th>優先順序</th>
-          <th>指派對象</th>
-          <th>地點</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>完成</td>
-          <td>撰寫程式</td>
-          <td>2020/06/08</td>
-          <td>低</td>
-          <td>李大頭</td>
-          <td>研討室</td>
-        </tr>
-        <tr>
-          <td>未完成</td>
-          <td>開會</td>
-          <td>2020/06/08</td>
-          <td>高</td>
-          <td>李大頭、主任、XX科</td>
-          <td>4F會議室</td>
-        </tr>
-        <tr>
-          <td>未完成</td>
-          <td>開會</td>
-          <td>2020/06/08</td>
-          <td>高</td>
-          <td>李大頭、主任、XX科</td>
-          <td>4F會議室</td>
-        </tr>
-        <tr>
-          <td>未完成</td>
-          <td>開會</td>
-          <td>2020/06/08</td>
-          <td>高</td>
-          <td>李大頭、主任、XX科</td>
-          <td>4F會議室</td>
-        </tr>
+        <!-- 法一 -->
+          {foreach $content as $c}
+            <tr>
+              <td>{$c.directions}</td>
+              <td>{$c.end}</td>
+            </tr>
+          {/foreach}
+          <!-- 法二 -->
+          <tr>
+            <td>{$content.1.directions}</td>
+            <td>{$content.1.end}</td>
+          </tr>
+          <tr>
+            <td>{$content.2.directions}</td>
+            <td>{$content.2.end}</td>
+          </tr>
       </tbody>
     </table>
 </div>
