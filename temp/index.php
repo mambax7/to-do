@@ -1,3 +1,7 @@
+<?php
+$title  = "待辦清單123";
+$header = "我的待辦事項清單dsda";
+?>
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -8,14 +12,14 @@
   <link rel="stylesheet" href="css/fontawesome_css/all.css">
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <title>待辦清單</title>
+  <title><?php echo $title; ?></title>
 </head>
 <body>
   <div class="container">
     <img src="images/logo.jpg" class="rounded-circle mx-auto d-block" width="100%" height="200rem" alt="logo">
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
         <a class="navbar-brand" href="#">
-            <h1>我的待辦事項清單</h1>
+            <h1><?php echo $header; ?></h1>
         </a>
 
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
