@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-16 04:31:09
+/* Smarty version 3.1.34-dev-7, created on 2020-06-16 06:36:07
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee83cfd77df92_22852536',
+  'unifunc' => 'content_5ee85a474210e5_07882492',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592278265,
+      1 => 1592278283,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee83cfd77df92_22852536 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ee85a474210e5_07882492 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -104,6 +104,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+          <!-- 法二 -->
           <tr>
             <td><?php echo $_smarty_tpl->tpl_vars['content']->value[1]['directions'];?>
 </td>
