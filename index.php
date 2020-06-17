@@ -5,23 +5,23 @@ require_once 'header.php';
 /********************流程判斷*********************/
 // 變數
 $content = [];
-$op      = isset($_REQUEST['op']) ? $_REQUEST['op'] : "";
-
+// $op      = isset($_REQUEST['op']) ? $_REQUEST['op'] : "";
+$op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
 //if判斷
 // if ($op == 'post_form') {
-//     var_dump($op);
+//     die($op);
 // } else {
-//     echo "NO op";
+//     die($op);
 // }
 
 // switch判斷
 switch ($op) {
     case 'post_form':
-        var_dump($op);
+        die($op);
         break;
 
     default:
-        echo "NO op";
+        die($op);
         break;
 }
 
