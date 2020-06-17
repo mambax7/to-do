@@ -19,8 +19,3 @@ $db = link_db();
 // 一維陣列
 $navbar = ['home' => "回首頁", 'post' => "發布待辦事項"];
 $smarty->assign('navbar', $navbar);
-
-// 變數
-$content = [];
-
-$op = isset($_REQUEST['op']) ? $_REQUEST['op'] : "";
