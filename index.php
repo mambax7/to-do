@@ -5,8 +5,20 @@ require_once 'header.php';
 // 表單
 function post_form()
 {
-    global $content, $db;
+    global $content, $db, $smarty;
 
+    // 加入預設值
+    $content = [
+        'title'      => '',
+        'directions' => '',
+        'end'        => date("Y-m-d", strtotime("+10 day")),
+        'priority'   => '中',
+        'assign'     => [],
+        'done'       => 1,
+    ];
+    $next_op = 'insert_list';
+
+    $smarty->assign('next_op', $next_op);
 }
 function list_all()
 {
@@ -24,7 +36,9 @@ switch ($op) {
     case 'post_form':
         post_form();
         break;
-
+    case 'insert_list':
+        die(var_dump($_POST));
+        break;
     default:
         //列出所有事項
         list_all();
