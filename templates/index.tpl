@@ -20,7 +20,7 @@
                     <a class="nav-link" href="{$action}">{$navbar.home} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{$action}?op=post">{$navbar.post}</a>
+                    <a class="nav-link" href="{$action}?op=post_form">{$navbar.post}</a>
                 </li>
             </ul>
         </div>
@@ -62,7 +62,7 @@
       </div>
     {else}
       <div class="jumbotron text-center">
-        <a class="btn btn-info" href="{$action}?op=post" role="button">新增待辦事項</a>
+        <a class="btn btn-info" href="{$action}?op=post_form" role="button">新增待辦事項</a>
       </div>
     {/if}
 </body>

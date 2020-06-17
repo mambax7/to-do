@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-17 03:54:25
+/* Smarty version 3.1.34-dev-7, created on 2020-06-17 06:51:39
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee985e132d7a3_38262540',
+  'unifunc' => 'content_5ee9af6b21f540_64987002',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592362454,
+      1 => 1592372787,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5ee985e132d7a3_38262540 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ee9af6b21f540_64987002 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -49,7 +49,7 @@ function content_5ee985e132d7a3_38262540 (Smarty_Internal_Template $_smarty_tpl)
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-?op=post"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
+?op=post_form"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
 </a>
                 </li>
             </ul>
@@ -102,7 +102,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php } else { ?>
       <div class="jumbotron text-center">
         <a class="btn btn-info" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-?op=post" role="button">新增待辦事項</a>
+?op=post_form" role="button">新增待辦事項</a>
       </div>
     <?php }?>
 </body>

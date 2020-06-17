@@ -22,4 +22,5 @@ $smarty->assign('navbar', $navbar);
 
 // 變數
 $content = [];
-$op      = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
+
+$op = isset($_REQUEST['op']) ? $_REQUEST['op'] : "";
