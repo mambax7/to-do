@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-17 03:45:34
+/* Smarty version 3.1.34-dev-7, created on 2020-06-17 03:54:25
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee983ce3cf523_51870711',
+  'unifunc' => 'content_5ee985e132d7a3_38262540',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592361363,
+      1 => 1592362454,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5ee983ce3cf523_51870711 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ee985e132d7a3_38262540 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -43,11 +43,13 @@ function content_5ee983ce3cf523_51870711 (Smarty_Internal_Template $_smarty_tpl)
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav  ml-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['home'];?>
+                    <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['home'];?>
  <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?op=post"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
+                    <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+?op=post"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
 </a>
                 </li>
             </ul>
@@ -99,7 +101,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </div>
     <?php } else { ?>
       <div class="jumbotron text-center">
-        <a class="btn btn-info" href="index.php?op=post" role="button">新增待辦事項</a>
+        <a class="btn btn-info" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+?op=post" role="button">新增待辦事項</a>
       </div>
     <?php }?>
 </body>
