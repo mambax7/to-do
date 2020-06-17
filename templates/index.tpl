@@ -16,10 +16,10 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav  ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item {if !$op}active{/if}">
                     <a class="nav-link" href="{$action}">{$navbar.home} <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {if $op=='post_form'}active{/if}">
                     <a class="nav-link" href="{$action}?op=post_form">{$navbar.post}</a>
                 </li>
             </ul>
@@ -39,31 +39,35 @@
             </ul>
         </div>
     </div>
-
-    {if $content}
-      <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover table-sm">
-            <thead  class="thead-dark">
-              <tr>
-                <th>描述</th>
-                <th>到期日</th>
-              </tr>
-            </thead>
-            <tbody>
-
-                {foreach $content as $c}
-                  <tr>
-                    <td>{$c.directions}</td>
-                    <td>{$c.end}</td>
-                  </tr>
-                {/foreach}
-            </tbody>
-          </table>
-      </div>
+    {if $op=="post_form"}
+      {include file="post_form.tpl"}
     {else}
-      <div class="jumbotron text-center">
-        <a class="btn btn-info" href="{$action}?op=post_form" role="button">新增待辦事項</a>
-      </div>
+        {if $content}
+          <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover table-sm">
+                <thead  class="thead-dark">
+                  <tr>
+                    <th>描述</th>
+                    <th>到期日</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    {foreach $content as $c}
+                      <tr>
+                        <td>{$c.directions}</td>
+                        <td>{$c.end}</td>
+                      </tr>
+                    {/foreach}
+                </tbody>
+              </table>
+          </div>
+        {else}
+          <div class="jumbotron text-center">
+            <a class="btn btn-info" href="{$action}?op=post_form" role="button">新增待辦事項</a>
+          </div>
+        {/if}
     {/if}
+
 </body>
 </html>

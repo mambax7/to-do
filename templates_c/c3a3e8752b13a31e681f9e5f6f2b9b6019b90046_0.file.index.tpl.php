@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-17 06:51:39
+/* Smarty version 3.1.34-dev-7, created on 2020-06-17 08:11:39
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee9af6b21f540_64987002',
+  'unifunc' => 'content_5ee9c22bbd5321_02596922',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592372787,
+      1 => 1592377895,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:post_form.tpl' => 1,
   ),
 ),false)) {
-function content_5ee9af6b21f540_64987002 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ee9c22bbd5321_02596922 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -42,12 +43,12 @@ function content_5ee9af6b21f540_64987002 (Smarty_Internal_Template $_smarty_tpl)
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav  ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item <?php if (!$_smarty_tpl->tpl_vars['op']->value) {?>active<?php }?>">
                     <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 "><?php echo $_smarty_tpl->tpl_vars['navbar']->value['home'];?>
  <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php if ($_smarty_tpl->tpl_vars['op']->value == 'post_form') {?>active<?php }?>">
                     <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 ?op=post_form"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
 </a>
@@ -69,42 +70,47 @@ function content_5ee9af6b21f540_64987002 (Smarty_Internal_Template $_smarty_tpl)
             </ul>
         </div>
     </div>
+    <?php if ($_smarty_tpl->tpl_vars['op']->value == "post_form") {?>
+      <?php $_smarty_tpl->_subTemplateRender("file:post_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    <?php } else { ?>
+        <?php if ($_smarty_tpl->tpl_vars['content']->value) {?>
+          <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover table-sm">
+                <thead  class="thead-dark">
+                  <tr>
+                    <th>描述</th>
+                    <th>到期日</th>
+                  </tr>
+                </thead>
+                <tbody>
 
-    <?php if ($_smarty_tpl->tpl_vars['content']->value) {?>
-      <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover table-sm">
-            <thead  class="thead-dark">
-              <tr>
-                <th>描述</th>
-                <th>到期日</th>
-              </tr>
-            </thead>
-            <tbody>
-
-                <?php
+                    <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['content']->value, 'c');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
 ?>
-                  <tr>
-                    <td><?php echo $_smarty_tpl->tpl_vars['c']->value['directions'];?>
+                      <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['directions'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['c']->value['end'];?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['end'];?>
 </td>
-                  </tr>
-                <?php
+                      </tr>
+                    <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-            </tbody>
-          </table>
-      </div>
-    <?php } else { ?>
-      <div class="jumbotron text-center">
-        <a class="btn btn-info" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+                </tbody>
+              </table>
+          </div>
+        <?php } else { ?>
+          <div class="jumbotron text-center">
+            <a class="btn btn-info" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 ?op=post_form" role="button">新增待辦事項</a>
-      </div>
+          </div>
+        <?php }?>
     <?php }?>
+
 </body>
 </html><?php }
 }
