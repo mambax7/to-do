@@ -25,10 +25,10 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav  ml-auto mt-2 mt-lg-0">
 <li class="nav-item active">
-    <a class="nav-link" href="#">{$navbar.home} <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="index.php">{$navbar.home} <span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="post.html">{$navbar.post}</a>
+    <a class="nav-link" href="index.php?op=post">{$navbar.post}</a>
 </li>
             </ul>
         </div>
@@ -47,35 +47,30 @@
         </ul>
     </div>
 </div>
-
-<div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover table-sm">
-      <thead  class="thead-dark">
-        <tr>
-          <th>描述</th>
-          <th>到期日</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 法一 -->
-          {foreach $content as $c}
-            <tr>
-              <td>{$c.directions}</td>
-              <td>{$c.end}</td>
-            </tr>
-          {/foreach}
-          <!-- 法二 -->
+{if $content}
+  <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover table-sm">
+        <thead  class="thead-dark">
           <tr>
-            <td>{$content.1.directions}</td>
-            <td>{$content.1.end}</td>
+            <th>描述</th>
+            <th>到期日</th>
           </tr>
-          <tr>
-            <td>{$content.2.directions}</td>
-            <td>{$content.2.end}</td>
-          </tr>
-      </tbody>
-    </table>
-</div>
+        </thead>
+        <tbody>
 
+            {foreach $content as $c}
+              <tr>
+                <td>{$c.directions}</td>
+                <td>{$c.end}</td>
+              </tr>
+            {/foreach}
+        </tbody>
+      </table>
+  </div>
+{else}
+  <div class="jumbotron text-center">
+    <a class="btn btn-info" href="index.php?op=post" role="button">新增待辦事項</a>
+  </div>
+{/if}
 </body>
 </html>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-16 06:36:07
+/* Smarty version 3.1.34-dev-7, created on 2020-06-16 08:57:28
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee85a474210e5_07882492',
+  'unifunc' => 'content_5ee87b68eaa755_56829509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592278283,
+      1 => 1592294244,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee85a474210e5_07882492 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ee87b68eaa755_56829509 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -54,11 +54,11 @@ function content_5ee85a474210e5_07882492 (Smarty_Internal_Template $_smarty_tpl)
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav  ml-auto mt-2 mt-lg-0">
 <li class="nav-item active">
-    <a class="nav-link" href="#"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['home'];?>
+    <a class="nav-link" href="index.php"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['home'];?>
  <span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="post.html"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
+    <a class="nav-link" href="index.php?op=post"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
 </a>
 </li>
             </ul>
@@ -78,49 +78,40 @@ function content_5ee85a474210e5_07882492 (Smarty_Internal_Template $_smarty_tpl)
         </ul>
     </div>
 </div>
+<?php if ($_smarty_tpl->tpl_vars['content']->value) {?>
+  <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover table-sm">
+        <thead  class="thead-dark">
+          <tr>
+            <th>描述</th>
+            <th>到期日</th>
+          </tr>
+        </thead>
+        <tbody>
 
-<div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover table-sm">
-      <thead  class="thead-dark">
-        <tr>
-          <th>描述</th>
-          <th>到期日</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 法一 -->
-          <?php
+            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['content']->value, 'c');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
 ?>
-            <tr>
-              <td><?php echo $_smarty_tpl->tpl_vars['c']->value['directions'];?>
+              <tr>
+                <td><?php echo $_smarty_tpl->tpl_vars['c']->value['directions'];?>
 </td>
-              <td><?php echo $_smarty_tpl->tpl_vars['c']->value['end'];?>
+                <td><?php echo $_smarty_tpl->tpl_vars['c']->value['end'];?>
 </td>
-            </tr>
-          <?php
+              </tr>
+            <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-          <!-- 法二 -->
-          <tr>
-            <td><?php echo $_smarty_tpl->tpl_vars['content']->value[1]['directions'];?>
-</td>
-            <td><?php echo $_smarty_tpl->tpl_vars['content']->value[1]['end'];?>
-</td>
-          </tr>
-          <tr>
-            <td><?php echo $_smarty_tpl->tpl_vars['content']->value[2]['directions'];?>
-</td>
-            <td><?php echo $_smarty_tpl->tpl_vars['content']->value[2]['end'];?>
-</td>
-          </tr>
-      </tbody>
-    </table>
-</div>
-
+        </tbody>
+      </table>
+  </div>
+<?php } else { ?>
+  <div class="jumbotron text-center">
+    <a class="btn btn-info" href="index.php?op=post" role="button">新增待辦事項</a>
+  </div>
+<?php }?>
 </body>
 </html><?php }
 }
