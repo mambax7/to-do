@@ -9,19 +9,19 @@ $op      = isset($_REQUEST['op']) ? $_REQUEST['op'] : "";
 
 //if判斷
 // if ($op == 'post_form') {
-//     echo (var_dump($op));
+//     var_dump($op);
 // } else {
-//     echo ("NO op");
+//     echo "NO op";
 // }
 
 // switch判斷
 switch ($op) {
     case 'post_form':
-        echo (var_dump($op));
+        var_dump($op);
         break;
 
     default:
-        echo ("NO op");
+        echo "NO op";
         break;
 }
 
