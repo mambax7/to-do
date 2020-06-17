@@ -1,27 +1,28 @@
 <?php
 // 引入檔頭
 require_once 'header.php';
-// var_dump($db);
+/************************自訂函數**************************/
+function list_all()
+{
+    global $smarty;
+    $content[1]['directions'] = "撰寫程式";
+    $content[1]['end']        = "2020/06/08";
+    $content[2]['directions'] = "開會";
+    $content[2]['end']        = "2020/06/10";
+    $smarty->assign('content', $content);
+}
 /********************流程判斷*********************/
-// 變數
-$content = [];
-// $op      = isset($_REQUEST['op']) ? $_REQUEST['op'] : "";
+// 變數過濾
 $op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
-//if判斷
-// if ($op == 'post_form') {
-//     die($op);
-// } else {
-//     die($op);
-// }
 
-// switch判斷
 switch ($op) {
     case 'post_form':
         die($op);
         break;
 
     default:
-        die($op);
+        //列出所有事項
+        list_all();
         break;
 }
 
