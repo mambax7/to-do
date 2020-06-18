@@ -52,7 +52,6 @@
                   </tr>
                 </thead>
                 <tbody>
-
                     {foreach $content as $c}
                       <tr>
                         <td>{$c.directions}</td>

@@ -51,6 +51,7 @@ function add()
     return $sn;
 }
 
+// 驗證欄位正確性
 function check_error()
 {
     $message = [];
@@ -91,6 +92,26 @@ function list_all()
     while ($data = $result->fetch_assoc()) {
         $content[] = $data;
     }
+    // 法二
+    while ($data = $result->fetch_row()) {
+        $content[] = $data;
+    }
+    // 法三
+    $i = 0;
+    while (list($sn, $title, $directions, $end, $priority, $assign, $done, $create_time, $update_time) = $result->fetch_row()) {
+
+        $content[$i]['sn']          = $sn;
+        $content[$i]['title']       = $title;
+        $content[$i]['directions']  = $directions;
+        $content[$i]['end']         = $end;
+        $content[$i]['priority']    = $priority;
+        $content[$i]['assign']      = $assign;
+        $content[$i]['done']        = $done;
+        $content[$i]['create_time'] = $create_time;
+        $content[$i]['update_time'] = $update_time;
+        $i++;
+    }
+    die(var_dump($content));
 }
 /********************流程判斷*********************/
 // 變數過濾
