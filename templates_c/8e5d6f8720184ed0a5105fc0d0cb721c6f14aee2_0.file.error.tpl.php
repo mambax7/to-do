@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-18 07:45:47
+/* Smarty version 3.1.34-dev-7, created on 2020-06-18 08:09:19
   from 'E:\UniServerZ\www\templates\error.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eeb0d9b9167d3_32549023',
+  'unifunc' => 'content_5eeb131f938ea8_72619732',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e5d6f8720184ed0a5105fc0d0cb721c6f14aee2' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\error.tpl',
-      1 => 1592462740,
+      1 => 1592464158,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5eeb0d9b9167d3_32549023 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eeb131f938ea8_72619732 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
-  <meta http-equiv="refresh" content="2; url=index.php">
+  <?php if ($_smarty_tpl->tpl_vars['refresh']->value) {?><meta http-equiv="refresh" content="2; url=index.php"><?php }?>
   <!-- 引入檔頭 -->
   <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

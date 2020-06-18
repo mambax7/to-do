@@ -50,14 +50,22 @@ function add()
     $sn = $db->insert_id;
     return $sn;
 }
+
 // 列出所有
 function list_all()
 {
-    global $content;
-    $content[1]['directions'] = "撰寫程式";
-    $content[1]['end']        = "2020/06/08";
-    $content[2]['directions'] = "開會";
-    $content[2]['end']        = "2020/06/10";
+    global $db, $smarty, $content;
+
+    $sql = "select * from `list` order by end";
+    if (!$result = $db->query($sql)) {
+        die(error($db->error, ""));
+    }
+
+    $content = [];
+    // 法一
+    while ($data = $result->fetch_assoc()) {
+        $content[] = $data;
+    }
 }
 /********************流程判斷*********************/
 // 變數過濾
