@@ -25,8 +25,29 @@ function error()
     if (empty($_POST['end'])) {
         $message[] = '到期日必填';
     }
+
+    if (!checkDateIsValid($_POST['end'])) {
+        $message[] = '到期日的日期格式需為西元 YYYY-mm-dd 或 YYYY/mm/dd';
+    }
+
     $smarty->assign('title', '錯誤提示頁');
     $smarty->assign('message', $message);
     $smarty->display('templates/error.tpl');
     exit();
+}
+
+// 判斷日期格式是否正確
+function checkDateIsValid($date, $formats = array("Y-m-d", "Y/m/d"))
+{
+    $unixTime = strtotime($date);
+    if (!$unixTime) {
+        return false;
+    }
+    foreach ($formats as $format) {
+        if (date($format, $unixTime) == $date) {
+            return true;
+        }
+    }
+
+    return false;
 }
