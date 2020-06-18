@@ -6,5 +6,5 @@
   <link rel="stylesheet" href="css/fontawesome_css/all.css">
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <title>{$title}</title>
+  <title>{$page_title}</title>
 </head>

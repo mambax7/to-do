@@ -1,5 +1,5 @@
 <?php
-$smarty->assign('title', _PAGE_TITLE);
+$smarty->assign('page_title', _PAGE_TITLE);
 $smarty->assign('header', _PAGE_HEADER);
 $smarty->assign('op', $op);
 $smarty->assign('content', $content);

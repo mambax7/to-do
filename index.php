@@ -67,9 +67,6 @@ switch ($op) {
     case 'post_form':
         post_form();
         break;
-    case 'insert_list':
-        die(var_dump($_POST));
-        break;
     default:
         //列出所有事項
         list_all();

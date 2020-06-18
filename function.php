@@ -26,11 +26,15 @@ function error()
         $message[] = '到期日必填';
     }
 
+    if (empty($_POST['assign'])) {
+        $message[] = '至少指派一名';
+    }
+
     if (!checkDateIsValid($_POST['end'])) {
         $message[] = '到期日的日期格式需為西元 YYYY-mm-dd 或 YYYY/mm/dd';
     }
 
-    $smarty->assign('title', '錯誤提示頁');
+    $smarty->assign('page_title', '錯誤提示頁');
     $smarty->assign('message', $message);
     $smarty->display('templates/error.tpl');
     exit();

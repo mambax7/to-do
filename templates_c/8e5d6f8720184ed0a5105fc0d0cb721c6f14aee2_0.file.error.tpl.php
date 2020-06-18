@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-18 07:29:27
+/* Smarty version 3.1.34-dev-7, created on 2020-06-18 07:45:47
   from 'E:\UniServerZ\www\templates\error.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eeb09c75f3783_48733453',
+  'unifunc' => 'content_5eeb0d9b9167d3_32549023',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e5d6f8720184ed0a5105fc0d0cb721c6f14aee2' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\error.tpl',
-      1 => 1592461760,
+      1 => 1592462740,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5eeb09c75f3783_48733453 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eeb0d9b9167d3_32549023 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <meta http-equiv="refresh" content="2; url=index.php">
@@ -30,8 +30,8 @@ function content_5eeb09c75f3783_48733453 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 <body>
   <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading">錯誤提示</h4>
-    <ul>
+    <h4 class="alert-heading text-center">錯誤提示</h4>
+    <ul  class="text-center">
       <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['message']->value, 'value', false, 'key');
 if ($_from !== null) {
