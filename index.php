@@ -32,6 +32,7 @@ function post_form()
 function add()
 {
     global $db;
+    error();
     //過濾變數
     $title      = $db->real_escape_string($_POST['title']);
     $directions = $db->real_escape_string($_POST['directions']);

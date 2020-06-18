@@ -9,3 +9,24 @@ function link_db()
     $mysqli->set_charset("utf8");
     return $mysqli;
 }
+
+//失敗返回
+function error()
+{
+    global $smarty;
+    // die(var_dump($_POST));
+    $message = [];
+    if (empty($_POST['tilte'])) {
+        $message[] = '標題必填';
+    }
+    if (empty($_POST['directions'])) {
+        $message[] = '描述必填';
+    }
+    if (empty($_POST['end'])) {
+        $message[] = '到期日必填';
+    }
+    $smarty->assign('title', '錯誤提示頁');
+    $smarty->assign('message', $message);
+    $smarty->display('templates/error.tpl');
+    exit();
+}
