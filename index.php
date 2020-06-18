@@ -6,7 +6,13 @@ require_once 'header.php';
 function post_form()
 {
     global $content, $db, $smarty;
-
+    if (isset($_POST['send'])) {
+        if (isset($_POST['next_op'])) {
+            if ($_POST['next_op'] == "add") {
+                add();
+            }
+        }
+    }
     // 加入預設值
     $content = [
         'title'      => '',
@@ -16,10 +22,26 @@ function post_form()
         'assign'     => [],
         'done'       => 1,
     ];
-    $next_op = 'insert_list';
+    $next_op = 'add';
 
     $smarty->assign('next_op', $next_op);
 }
+//新增清單
+function add()
+{
+    global $db;
+    // die(var_dump($_POST));
+    // 連線資料庫
+    $sql = "INSERT INTO `list` ( `title`, `directions`, `end`, `priority`, `assign`, `done`)
+    VALUES ('{$title}', '{$directions}', '{$end}', '{$priority}', '{$assign}', '{$done}')";
+    if (!$db->query($sql)) {
+        throw new Exception($db->error);
+    }
+
+    $sn = $db->sn;
+    return $sn;
+}
+// 列出所有
 function list_all()
 {
     global $content;

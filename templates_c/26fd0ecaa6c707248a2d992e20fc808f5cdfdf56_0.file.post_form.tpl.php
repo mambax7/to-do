@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-17 09:37:48
+/* Smarty version 3.1.34-dev-7, created on 2020-06-18 01:52:58
   from 'E:\UniServerZ\www\templates\post_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee9d65c2334d6_97356830',
+  'unifunc' => 'content_5eeabaea6132e2_21907697',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fd0ecaa6c707248a2d992e20fc808f5cdfdf56' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\post_form.tpl',
-      1 => 1592383031,
+      1 => 1592441574,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee9d65c2334d6_97356830 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eeabaea6132e2_21907697 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
   <div class="container">
     <form action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
@@ -87,9 +87,11 @@ function content_5ee9d65c2334d6_97356830 (Smarty_Internal_Template $_smarty_tpl)
         </div>
       </div>
         <div class="text-center">
-          <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['next_op']->value;?>
+          <input type="hidden" name="next_op" value="<?php echo $_smarty_tpl->tpl_vars['next_op']->value;?>
 ">
-          <button type="submit" name="button" class="btn btn-primary">儲存</button>
+          <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['op']->value;?>
+">
+          <input type="submit" name="send" value="儲存" class="btn btn-primary" />
         </div>
     </form>
   </div>
