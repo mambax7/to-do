@@ -32,7 +32,7 @@ function post_form()
 function add()
 {
     global $db;
-    error();
+    check_error();
     //過濾變數
     $title      = $db->real_escape_string($_POST['title']);
     $directions = $db->real_escape_string($_POST['directions']);
@@ -51,6 +51,31 @@ function add()
     return $sn;
 }
 
+function check_error()
+{
+    $message = [];
+    if (empty($_POST['title'])) {
+        $message[] = '標題必填';
+    }
+    if (empty($_POST['directions'])) {
+        $message[] = '描述必填';
+    }
+    if (empty($_POST['end'])) {
+        $message[] = '到期日必填';
+    }
+
+    if (empty($_POST['assign'])) {
+        $message[] = '至少指派一名';
+    }
+
+    if (!checkDateIsValid($_POST['end'])) {
+        $message[] = '到期日的日期格式需為西元 YYYY-mm-dd 或 YYYY/mm/dd';
+    }
+    if (!empty($message)) {
+        error($message, 1);
+        exit();
+    }
+}
 // 列出所有
 function list_all()
 {
@@ -58,7 +83,7 @@ function list_all()
 
     $sql = "select * from `list` order by end";
     if (!$result = $db->query($sql)) {
-        die(error($db->error, ""));
+        die(error($db->error));
     }
 
     $content = [];

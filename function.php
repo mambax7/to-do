@@ -11,32 +11,9 @@ function link_db()
 }
 
 //失敗返回
-function error($message = [], $refresh = 1)
+function error($message, $refresh = '')
 {
     global $smarty;
-    // die(var_dump($_POST));
-    if (empty($message)) {
-        $message = [];
-        if (empty($_POST['tilte'])) {
-            $message[] = '標題必填';
-        }
-        if (empty($_POST['directions'])) {
-            $message[] = '描述必填';
-        }
-        if (empty($_POST['end'])) {
-            $message[] = '到期日必填';
-        }
-
-        if (empty($_POST['assign'])) {
-            $message[] = '至少指派一名';
-        }
-
-        if (!checkDateIsValid($_POST['end'])) {
-            $message[] = '到期日的日期格式需為西元 YYYY-mm-dd 或 YYYY/mm/dd';
-        }
-
-    }
-
     $smarty->assign('page_title', '錯誤提示頁');
     $smarty->assign('message', $message);
     $smarty->assign('refresh', $refresh);
