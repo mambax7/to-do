@@ -133,7 +133,9 @@ function find_one($sn = "")
         die(error($db->error));
     }
     $data = $result->fetch_assoc();
-
+    // 複選框$data['assign']
+    $data['assign'] = explode(';', $data['assign']);
+    // die(var_dump($data));
     return $data;
 }
 
