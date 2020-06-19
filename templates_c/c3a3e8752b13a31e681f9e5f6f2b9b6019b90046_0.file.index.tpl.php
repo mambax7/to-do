@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-19 02:03:15
+/* Smarty version 3.1.34-dev-7, created on 2020-06-19 03:09:31
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eec0ed349b662_49760291',
+  'unifunc' => 'content_5eec1e5b5580e8_64072061',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592528591,
+      1 => 1592532471,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:post_form.tpl' => 1,
   ),
 ),false)) {
-function content_5eec0ed349b662_49760291 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eec1e5b5580e8_64072061 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->

@@ -15,16 +15,23 @@ function post_form()
         }
         header("location: index.php?sn={$sn}");
     }
-    // 加入預設值
-    $content = [
-        'title'      => '',
-        'directions' => '',
-        'end'        => date("Y-m-d", strtotime("+10 day")),
-        'priority'   => '中',
-        'assign'     => [],
-        'done'       => 0,
-    ];
-    $next_op = 'add';
+
+    // 編輯
+    if (isset($_GET['sn'])) {
+
+        $next_op = 'update';
+    } else {
+        // 加入預設值
+        $content = [
+            'title'      => '',
+            'directions' => '',
+            'end'        => date("Y-m-d", strtotime("+10 day")),
+            'priority'   => '中',
+            'assign'     => [],
+            'done'       => 0,
+        ];
+        $next_op = 'add';
+    }
 
     $smarty->assign('next_op', $next_op);
 }
