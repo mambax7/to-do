@@ -66,6 +66,7 @@
     </div>
 
     <div class="text-right">
+      <a href="{$action}?op=delet&sn={$content.sn}" class="btn btn-danger">刪除</a>
       <a href="{$action}?op=post_form&sn={$content.sn}" class="btn btn-warning">編輯</a>
       <a href="{$action}" class="btn btn-success">回首頁</a>
   </div>

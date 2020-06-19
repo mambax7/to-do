@@ -74,7 +74,8 @@
                       <td>{$data.assign}</td>
                       <td>{$data.create_time}</td>
                       <td>
-                        <a href="{$action}?op=post_form&sn={$data.sn}" class="btn btn-warning" title="編輯""><i class="fas fa-pencil-alt"></i> 編輯</a>
+                        <a href="{$action}?op=delet&sn={$data.sn}" class="btn btn-danger"  title="刪除"><i class="fas fa-times-circle"></i> 刪除</a>
+                        <a href="{$action}?op=post_form&sn={$data.sn}" class="btn btn-warning" title="編輯"><i class="fas fa-pencil-alt"></i> 編輯</a>
                       </td>
                   </tr>
                 {/foreach}
