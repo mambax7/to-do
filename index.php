@@ -95,7 +95,8 @@ function list_all()
         $title      = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
         $directions = filter_var($directions, FILTER_SANITIZE_SPECIAL_CHARS);
         $priority   = filter_var($priority, FILTER_SANITIZE_SPECIAL_CHARS);
-        $assign     = explode(';', $assign);
+        // 字串切割
+        $assign = explode(';', $assign);
 
         $content[$i]['sn']          = $sn;
         $content[$i]['title']       = $title;
