@@ -41,6 +41,8 @@
     </div>
     {if $op=="post_form"}
       {include file="post_form.tpl"}
+    {elseif $op=="show_one"}
+      {include file="show_one.tpl"}
     {else}
         {if $content}
           <div class="table-responsive">
@@ -66,7 +68,7 @@
                             <span class="badge badge-danger text-center"><i class="fas fa-times-circle"></i></span>
                         {/if}
                       </td>
-                      <td>{$data.title}</td>
+                      <td><a href="{$action}?sn={$data.sn}">{$data.title}</a></td>
                       <td>{$data.end}</td>
                       <td>{$data.priority}</td>
                       <td>{$data.assign}</td>

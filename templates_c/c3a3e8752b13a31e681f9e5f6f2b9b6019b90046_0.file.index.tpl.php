@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-19 03:09:31
+/* Smarty version 3.1.34-dev-7, created on 2020-06-19 06:58:57
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eec1e5b5580e8_64072061',
+  'unifunc' => 'content_5eec54215d8af3_52538411',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592532471,
+      1 => 1592546330,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:header.tpl' => 1,
     'file:post_form.tpl' => 1,
+    'file:show_one.tpl' => 1,
   ),
 ),false)) {
-function content_5eec1e5b5580e8_64072061 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eec54215d8af3_52538411 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -73,6 +74,9 @@ function content_5eec1e5b5580e8_64072061 (Smarty_Internal_Template $_smarty_tpl)
     <?php if ($_smarty_tpl->tpl_vars['op']->value == "post_form") {?>
       <?php $_smarty_tpl->_subTemplateRender("file:post_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+    <?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "show_one") {?>
+      <?php $_smarty_tpl->_subTemplateRender("file:show_one.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <?php } else { ?>
         <?php if ($_smarty_tpl->tpl_vars['content']->value) {?>
           <div class="table-responsive">
@@ -102,8 +106,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
                             <span class="badge badge-danger text-center"><i class="fas fa-times-circle"></i></span>
                         <?php }?>
                       </td>
-                      <td><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
-</td>
+                      <td><a href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+?sn=<?php echo $_smarty_tpl->tpl_vars['data']->value['sn'];?>
+"><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
+</a></td>
                       <td><?php echo $_smarty_tpl->tpl_vars['data']->value['end'];?>
 </td>
                       <td><?php echo $_smarty_tpl->tpl_vars['data']->value['priority'];?>

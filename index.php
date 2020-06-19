@@ -33,7 +33,7 @@ function post_form()
                 $refresh_url = 'index.php?sn=' . $sn;
             }
         }
-        die(redirect_page($_message, $refresh_url, $page_title));
+        redirect_page($_message, $refresh_url, $page_title);
     }
 
     // 編輯
@@ -175,32 +175,51 @@ function list_all()
 function find_one($sn = "")
 {
     global $db;
+
     if (empty($sn)) {
-        return;
+        die(redirect_page($db->error));
     }
 
     $sql = "select * from list where `sn` = '{$sn}'";
+
     if (!$result = $db->query($sql)) {
         die(redirect_page($db->error));
     }
+
     $data = $result->fetch_assoc();
-    // 複選框$data['assign']
-    $data['assign_arr'] = explode(';', $data['assign']);
-    // die(var_dump($data));
-    return $data;
+    if (empty($data)) {
+        redirect_page('無此編號', 'index.php');
+
+    } else {
+        //過濾變數
+        $data['title']      = filter_var($data['title'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $data['directions'] = filter_var($data['directions'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $data['priority']   = filter_var($data['priority'], FILTER_SANITIZE_SPECIAL_CHARS);
+        // 複選框$data['assign']
+        $data['assign_arr'] = explode(';', $data['assign']);
+        // die(var_dump($data));
+        return $data;
+    }
+
 }
 
 /********************流程判斷*********************/
 // 變數過濾
 $op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
-
+$sn = isset($_REQUEST['sn']) ? (int) $_REQUEST['sn'] : "";
 switch ($op) {
     case 'post_form':
         post_form();
         break;
     default:
-        //列出所有事項
-        list_all();
+        if (empty($sn)) {
+            //列出所有事項
+            list_all();
+        } else {
+            $content = find_one($sn);
+            $op      = 'show_one';
+        }
+
         break;
 }
 
