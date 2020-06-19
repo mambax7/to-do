@@ -88,17 +88,14 @@ function list_all()
     }
 
     $content = [];
-    // 法一
-    while ($data = $result->fetch_assoc()) {
-        $content[] = $data;
-    }
-    // 法二
-    while ($data = $result->fetch_row()) {
-        $content[] = $data;
-    }
-    // 法三
-    $i = 0;
+    $i       = 0;
     while (list($sn, $title, $directions, $end, $priority, $assign, $done, $create_time, $update_time) = $result->fetch_row()) {
+
+        //過濾變數
+        $title      = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
+        $directions = filter_var($directions, FILTER_SANITIZE_SPECIAL_CHARS);
+        $priority   = filter_var($priority, FILTER_SANITIZE_SPECIAL_CHARS);
+        $assign     = explode(';', $assign);
 
         $content[$i]['sn']          = $sn;
         $content[$i]['title']       = $title;
@@ -111,7 +108,7 @@ function list_all()
         $content[$i]['update_time'] = $update_time;
         $i++;
     }
-    die(var_dump($content));
+    // die(var_dump($content));
 }
 /********************流程判斷*********************/
 // 變數過濾
