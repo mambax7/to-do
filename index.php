@@ -9,18 +9,31 @@ function post_form()
     if (isset($_POST['send'])) {
         if (isset($_POST['next_op'])) {
             if ($_POST['next_op'] == "add") {
-                $sn          = add();
-                $_message    = empty($_sn) ? "新增失敗" : "新增成功!";
+                $sn = add();
+                if (empty($_sn)) {
+                    $_message   = "新增失敗";
+                    $page_title = '錯誤提示頁';
+                } else {
+                    $_message   = "新增成功!";
+                    $page_title = '成功提示頁';
+                }
+
                 $refresh_url = 'index.php';
             }
 
             if ($_POST['next_op'] == "update") {
-                $sn          = update();
-                $_message    = empty($_sn) ? "更新失敗" : "更新成功!";
+                $sn = update();
+                if (empty($_sn)) {
+                    $_message   = "更新失敗";
+                    $page_title = '錯誤提示頁';
+                } else {
+                    $_message   = "更新成功!";
+                    $page_title = '成功提示頁';
+                }
                 $refresh_url = 'index.php?sn={$sn}';
             }
         }
-        die(error($_message, $refresh_url));
+        die(redirect_page($_message, $refresh_url, $page_title));
     }
 
     // 編輯
@@ -90,7 +103,7 @@ function check_error()
         $message[] = '到期日的日期格式需為西元 YYYY-mm-dd 或 YYYY/mm/dd';
     }
     if (!empty($message)) {
-        error($message, 'index.php');
+        redirect_page($message, 'index.php');
         exit();
     }
 }
@@ -101,7 +114,7 @@ function list_all()
 
     $sql = "select * from `list` order by priority,end";
     if (!$result = $db->query($sql)) {
-        die(error($db->error));
+        die(redirect_page($db->error));
     }
 
     $content = [];
@@ -137,7 +150,7 @@ function find_one($sn = "")
 
     $sql = "select * from list where `sn` = '{$sn}'";
     if (!$result = $db->query($sql)) {
-        die(error($db->error));
+        die(redirect_page($db->error));
     }
     $data = $result->fetch_assoc();
     // 複選框$data['assign']

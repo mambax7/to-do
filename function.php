@@ -10,11 +10,11 @@ function link_db()
     return $mysqli;
 }
 
-//失敗返回
-function error($message, $refresh_url = '')
+//跳轉頁
+function redirect_page($message, $refresh_url = '', $page_title = '錯誤提示頁')
 {
     global $smarty;
-    $smarty->assign('page_title', '錯誤提示頁');
+    $smarty->assign('page_title', $page_title);
     $smarty->assign('message', $message);
     $smarty->assign('refresh_url', $refresh_url);
     $smarty->display('templates/error.tpl');
