@@ -6,7 +6,7 @@
   <div class="container">
     <img src="images/logo.jpg" class="rounded-circle mx-auto d-block" width="100%" height="200rem" alt="logo">
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{$action}">
             <h1>{$header}</h1>
         </a>
 

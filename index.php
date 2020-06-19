@@ -153,8 +153,8 @@ function list_all()
     while (list($sn, $title, $directions, $end, $priority, $assign, $done, $create_time, $update_time) = $result->fetch_row()) {
 
         //過濾變數
-        $title      = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
-        $directions = filter_var($directions, FILTER_SANITIZE_SPECIAL_CHARS);
+        $title      = htmlspecialchars($title, ENT_QUOTES);
+        $directions = htmlspecialchars($directions, ENT_QUOTES);
         $priority   = filter_var($priority, FILTER_SANITIZE_SPECIAL_CHARS);
 
         $content[$i]['sn']          = $sn;
@@ -192,8 +192,8 @@ function find_one($sn = "")
 
     } else {
         //過濾變數
-        $data['title']      = filter_var($data['title'], FILTER_SANITIZE_SPECIAL_CHARS);
-        $data['directions'] = filter_var($data['directions'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $data['title']      = htmlspecialchars($data['title'], ENT_QUOTES);
+        $data['directions'] = htmlspecialchars($data['directions'], ENT_QUOTES);
         $data['priority']   = filter_var($data['priority'], FILTER_SANITIZE_SPECIAL_CHARS);
         // 複選框$data['assign']
         $data['assign_arr'] = explode(';', $data['assign']);
