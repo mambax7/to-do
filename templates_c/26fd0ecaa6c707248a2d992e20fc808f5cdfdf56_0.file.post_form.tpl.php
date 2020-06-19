@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-19 03:38:29
+/* Smarty version 3.1.34-dev-7, created on 2020-06-19 04:17:22
   from 'E:\UniServerZ\www\templates\post_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eec2525ad7b34_20825770',
+  'unifunc' => 'content_5eec2e42d08e90_06913372',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fd0ecaa6c707248a2d992e20fc808f5cdfdf56' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\post_form.tpl',
-      1 => 1592534304,
+      1 => 1592536628,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eec2525ad7b34_20825770 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eec2e42d08e90_06913372 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 " method="post" id="myForm" role="form">
   <!-- b4-form-group-text -->
@@ -50,27 +50,27 @@ function content_5eec2525ad7b34_20825770 (Smarty_Internal_Template $_smarty_tpl)
     </select>
   </div>
 
-  <div class="form-group">
-      <label for="assign">指派對象</label>
-      <!-- b4-form-check-inline-->
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_0" value="爸爸" <?php if (in_array("爸爸",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>爸爸
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_1" value="媽媽" <?php if (in_array("媽媽",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>媽媽
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_2" value="哥哥" <?php if (in_array("哥哥",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>哥哥
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_3" value="妹妹" <?php if (in_array("妹妹",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>妹妹
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_4" value="我" <?php if (in_array("我",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>我
-        </label>
-      </div>
-  </div>
+<div class="form-group">
+    <label for="assign">指派對象</label>
+    <!-- b4-form-check-inline-->
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_0" value="爸爸" <?php if (in_array("爸爸",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>爸爸
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_1" value="媽媽" <?php if (in_array("媽媽",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>媽媽
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_2" value="哥哥" <?php if (in_array("哥哥",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>哥哥
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_3" value="妹妹" <?php if (in_array("妹妹",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>妹妹
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_4" value="我" <?php if (in_array("我",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>我
+      </label>
+    </div>
+</div>
 
   <div class="form-group">
       <label for="done">是否完成</label>
@@ -86,6 +86,8 @@ function content_5eec2525ad7b34_20825770 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 <div class="text-center">
   <input type="hidden" name="next_op" value="<?php echo $_smarty_tpl->tpl_vars['next_op']->value;?>
+">
+  <input type="hidden" name="sn" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['sn'];?>
 ">
   <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['op']->value;?>
 ">

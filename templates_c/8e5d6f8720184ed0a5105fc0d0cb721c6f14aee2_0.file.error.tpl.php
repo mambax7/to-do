@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-18 08:09:19
+/* Smarty version 3.1.34-dev-7, created on 2020-06-19 04:33:34
   from 'E:\UniServerZ\www\templates\error.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eeb131f938ea8_72619732',
+  'unifunc' => 'content_5eec320e993ee4_28516030',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e5d6f8720184ed0a5105fc0d0cb721c6f14aee2' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\error.tpl',
-      1 => 1592464158,
+      1 => 1592537579,
       2 => 'file',
     ),
   ),
@@ -21,16 +21,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5eeb131f938ea8_72619732 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eec320e993ee4_28516030 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
-  <?php if ($_smarty_tpl->tpl_vars['refresh']->value) {?><meta http-equiv="refresh" content="2; url=index.php"><?php }?>
+  <?php if ($_smarty_tpl->tpl_vars['refresh_url']->value) {?><meta http-equiv="refresh" content="2; url=<?php echo $_smarty_tpl->tpl_vars['refresh_url']->value;?>
+"><?php }?>
   <!-- 引入檔頭 -->
   <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <body>
   <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading text-center">錯誤提示</h4>
+    <h4 class="alert-heading text-center"><?php echo $_smarty_tpl->tpl_vars['page_title']->value;?>
+</h4>
     <ul  class="text-center">
       <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['message']->value, 'value', false, 'key');

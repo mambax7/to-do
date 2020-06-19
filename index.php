@@ -10,7 +10,7 @@ function post_form()
         if (isset($_POST['next_op'])) {
             if ($_POST['next_op'] == "add") {
                 $sn = add();
-                if (empty($_sn)) {
+                if (empty($sn)) {
                     $_message   = "新增失敗";
                     $page_title = '錯誤提示頁';
                 } else {
@@ -23,14 +23,14 @@ function post_form()
 
             if ($_POST['next_op'] == "update") {
                 $sn = update();
-                if (empty($_sn)) {
+                if (empty($sn)) {
                     $_message   = "更新失敗";
                     $page_title = '錯誤提示頁';
                 } else {
                     $_message   = "更新成功!";
                     $page_title = '成功提示頁';
                 }
-                $refresh_url = 'index.php?sn={$sn}';
+                $refresh_url = 'index.php?sn=' . $sn;
             }
         }
         die(redirect_page($_message, $refresh_url, $page_title));
@@ -75,9 +75,40 @@ function add()
     $sql = "INSERT INTO `list` ( `title`, `directions`, `end`, `priority`, `assign`, `done`,`create_time`,`update_time`)
     VALUES ('{$title}', '{$directions}', '{$end}', '{$priority}', '{$assign}', '{$done}',now(),now())";
 
-    $db->query($sql) or die($db->error);
+    $db->query($sql) or die(redirect_page($db->error));
 
     $sn = $db->insert_id;
+    return $sn;
+}
+
+//更新清單
+function update()
+{
+    global $db;
+    check_error();
+    //過濾變數
+    $sn          = (int) $_POST['sn'];
+    $title       = $db->real_escape_string($_POST['title']);
+    $directions  = $db->real_escape_string($_POST['directions']);
+    $end         = $db->real_escape_string($_POST['end']);
+    $priority    = $db->real_escape_string($_POST['priority']);
+    $assign      = $db->real_escape_string(implode(';', $_POST['assign']));
+    $done        = (int) $_POST['done'];
+    $update_time = date('Y-m-d H:i:s');
+
+    // 連線資料庫
+    $sql = "UPDATE `list` SET
+    `title`='{$title}',
+    `directions`='{$directions}',
+    `end`='{$end}',
+    `priority`='{$priority}',
+    `assign`='{$assign}',
+    `done`='{$done}',
+    `update_time`='{$update_time}'
+    WHERE `sn`= '$sn'";
+    // die($sql);
+    $db->query($sql) or die(redirect_page($db->error));
+
     return $sn;
 }
 

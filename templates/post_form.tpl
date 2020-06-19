@@ -59,6 +59,7 @@
 </div>
 <div class="text-center">
   <input type="hidden" name="next_op" value="{$next_op}">
+  <input type="hidden" name="sn" value="{$content.sn}">
   <input type="hidden" name="op" value="{$op}">
   <input type="submit" name="send" value="儲存" class="btn btn-primary" />
 </div>
