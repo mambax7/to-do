@@ -18,7 +18,10 @@ function post_form()
 
     // 編輯
     if (isset($_GET['sn'])) {
-
+        // 從資料庫撈資料
+        // 過濾變數
+        $sn      = (int) $_GET['sn'];
+        $content = find_one($sn);
         $next_op = 'update';
     } else {
         // 加入預設值
@@ -116,6 +119,24 @@ function list_all()
     }
     // die(var_dump($content));
 }
+
+//以流水號取得某筆資料
+function find_one($sn = "")
+{
+    global $db;
+    if (empty($sn)) {
+        return;
+    }
+
+    $sql = "select * from list where `sn` = '{$sn}'";
+    if (!$result = $db->query($sql)) {
+        die(error($db->error));
+    }
+    $data = $result->fetch_assoc();
+
+    return $data;
+}
+
 /********************流程判斷*********************/
 // 變數過濾
 $op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
