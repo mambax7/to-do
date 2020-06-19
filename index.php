@@ -82,7 +82,7 @@ function list_all()
 {
     global $db, $smarty, $content;
 
-    $sql = "select * from `list` order by end";
+    $sql = "select * from `list` order by priority,end";
     if (!$result = $db->query($sql)) {
         die(error($db->error));
     }
@@ -95,8 +95,6 @@ function list_all()
         $title      = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
         $directions = filter_var($directions, FILTER_SANITIZE_SPECIAL_CHARS);
         $priority   = filter_var($priority, FILTER_SANITIZE_SPECIAL_CHARS);
-        // 字串切割
-        $assign = explode(';', $assign);
 
         $content[$i]['sn']          = $sn;
         $content[$i]['title']       = $title;

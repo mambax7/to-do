@@ -47,17 +47,35 @@
               <table class="table table-striped table-bordered table-hover table-sm">
                 <thead  class="thead-dark">
                   <tr>
-                    <th>描述</th>
-                    <th>到期日</th>
+                      <th><i class="fas fa-check"></i></th>
+                      <th>事項</th>
+                      <th>到期日</th>
+                      <th>優先順序</th>
+                      <th>指派對象</th>
+                      <th>建立時間</th>
+                      <th>功能</th>
                   </tr>
                 </thead>
                 <tbody>
-                    {foreach $content as $c}
-                      <tr>
-                        <td>{$c.directions}</td>
-                        <td>{$c.end}</td>
-                      </tr>
-                    {/foreach}
+                {foreach $content as $data}
+                  <tr>
+                      <td>
+                        {if $data.done}
+                            <span class="badge badge-success text-center"><i class="fas fa-check"></i></span>
+                        {else}
+                            <span class="badge badge-danger text-center"><i class="fas fa-times-circle"></i></span>
+                        {/if}
+                      </td>
+                      <td>{$data.title}</td>
+                      <td>{$data.end}</td>
+                      <td>{$data.priority}</td>
+                      <td>{$data.assign}</td>
+                      <td>{$data.create_time}</td>
+                      <td>
+                        <a href="{$action}?op=post_form&sn={$data.sn}" class="btn btn-warning" title="編輯""><i class="fas fa-pencil-alt"></i> 編輯</a>
+                      </td>
+                  </tr>
+                {/foreach}
                 </tbody>
               </table>
           </div>

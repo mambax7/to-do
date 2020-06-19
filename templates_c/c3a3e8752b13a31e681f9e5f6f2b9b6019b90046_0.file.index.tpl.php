@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-18 08:50:09
+/* Smarty version 3.1.34-dev-7, created on 2020-06-19 02:03:15
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eeb1cb19ec895_63054818',
+  'unifunc' => 'content_5eec0ed349b662_49760291',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592466566,
+      1 => 1592528591,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:post_form.tpl' => 1,
   ),
 ),false)) {
-function content_5eeb1cb19ec895_63054818 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eec0ed349b662_49760291 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -79,23 +79,46 @@ function content_5eeb1cb19ec895_63054818 (Smarty_Internal_Template $_smarty_tpl)
               <table class="table table-striped table-bordered table-hover table-sm">
                 <thead  class="thead-dark">
                   <tr>
-                    <th>描述</th>
-                    <th>到期日</th>
+                      <th><i class="fas fa-check"></i></th>
+                      <th>事項</th>
+                      <th>到期日</th>
+                      <th>優先順序</th>
+                      <th>指派對象</th>
+                      <th>建立時間</th>
+                      <th>功能</th>
                   </tr>
                 </thead>
                 <tbody>
-                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['content']->value, 'c');
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['content']->value, 'data');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
 ?>
-                      <tr>
-                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['directions'];?>
+                  <tr>
+                      <td>
+                        <?php if ($_smarty_tpl->tpl_vars['data']->value['done']) {?>
+                            <span class="badge badge-success text-center"><i class="fas fa-check"></i></span>
+                        <?php } else { ?>
+                            <span class="badge badge-danger text-center"><i class="fas fa-times-circle"></i></span>
+                        <?php }?>
+                      </td>
+                      <td><?php echo $_smarty_tpl->tpl_vars['data']->value['title'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['c']->value['end'];?>
+                      <td><?php echo $_smarty_tpl->tpl_vars['data']->value['end'];?>
 </td>
-                      </tr>
-                    <?php
+                      <td><?php echo $_smarty_tpl->tpl_vars['data']->value['priority'];?>
+</td>
+                      <td><?php echo $_smarty_tpl->tpl_vars['data']->value['assign'];?>
+</td>
+                      <td><?php echo $_smarty_tpl->tpl_vars['data']->value['create_time'];?>
+</td>
+                      <td>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+?op=post_form&sn=<?php echo $_smarty_tpl->tpl_vars['data']->value['sn'];?>
+" class="btn btn-warning" title="編輯""><i class="fas fa-pencil-alt"></i> 編輯</a>
+                      </td>
+                  </tr>
+                <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
