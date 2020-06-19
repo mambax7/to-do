@@ -211,6 +211,11 @@ switch ($op) {
     case 'post_form':
         post_form();
         break;
+//刪除資料
+    case "delete":
+        delete($sn);
+        header("location: {$_SERVER['PHP_SELF']}");
+        break;
     default:
         if (empty($sn)) {
             //列出所有事項
