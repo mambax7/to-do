@@ -11,12 +11,12 @@ function link_db()
 }
 
 //失敗返回
-function error($message, $refresh = '')
+function error($message, $refresh_url = '')
 {
     global $smarty;
     $smarty->assign('page_title', '錯誤提示頁');
     $smarty->assign('message', $message);
-    $smarty->assign('refresh', $refresh);
+    $smarty->assign('refresh_url', $refresh_url);
     $smarty->display('templates/error.tpl');
     exit();
 }

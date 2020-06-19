@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  {if $refresh}<meta http-equiv="refresh" content="2; url=index.php">{/if}
+  {if $refresh_url}<meta http-equiv="refresh" content="2; url=$refresh_url">{/if}
   <!-- 引入檔頭 -->
   {include file="header.tpl"}
 <body>

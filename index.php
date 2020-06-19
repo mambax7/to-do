@@ -9,11 +9,18 @@ function post_form()
     if (isset($_POST['send'])) {
         if (isset($_POST['next_op'])) {
             if ($_POST['next_op'] == "add") {
-                $sn       = add();
-                $_message = empty($_sn) ? "新增失敗" : "新增成功!";
+                $sn          = add();
+                $_message    = empty($_sn) ? "新增失敗" : "新增成功!";
+                $refresh_url = 'index.php';
+            }
+
+            if ($_POST['next_op'] == "update") {
+                $sn          = update();
+                $_message    = empty($_sn) ? "更新失敗" : "更新成功!";
+                $refresh_url = 'index.php?sn={$sn}';
             }
         }
-        header("location: index.php?sn={$sn}");
+        die(error($_message, $refresh_url));
     }
 
     // 編輯
@@ -83,7 +90,7 @@ function check_error()
         $message[] = '到期日的日期格式需為西元 YYYY-mm-dd 或 YYYY/mm/dd';
     }
     if (!empty($message)) {
-        error($message, 1);
+        error($message, 'index.php');
         exit();
     }
 }
