@@ -203,6 +203,21 @@ function find_one($sn = "")
 
 }
 
+// 刪除
+function delete($sn)
+{
+    global $db;
+
+    if (empty($sn)) {
+        redirect_page('無此編號', 'index.php');
+    }
+    $sql = "DELETE FROM `list` WHERE `sn`='{$sn}'";
+    if (!$db->query($sql)) {
+        redirect_page($db->error, 'index.php');
+    } else {
+        redirect_page('刪除成功', 'index.php', '成功提示頁');
+    }
+}
 /********************流程判斷*********************/
 // 變數過濾
 $op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
@@ -214,7 +229,7 @@ switch ($op) {
 //刪除資料
     case "delete":
         delete($sn);
-        header("location: {$_SERVER['PHP_SELF']}");
+
         break;
     default:
         if (empty($sn)) {
