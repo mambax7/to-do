@@ -30,7 +30,7 @@ function post_form()
             'directions' => '',
             'end'        => date("Y-m-d", strtotime("+10 day")),
             'priority'   => '中',
-            'assign'     => [],
+            'assign_arr' => [],
             'done'       => 0,
         ];
         $next_op = 'add';
@@ -134,7 +134,7 @@ function find_one($sn = "")
     }
     $data = $result->fetch_assoc();
     // 複選框$data['assign']
-    $data['assign'] = explode(';', $data['assign']);
+    $data['assign_arr'] = explode(';', $data['assign']);
     // die(var_dump($data));
     return $data;
 }

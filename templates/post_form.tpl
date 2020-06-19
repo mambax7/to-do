@@ -23,27 +23,27 @@
     </select>
   </div>
 
-  <div class="form-group">
-      <label for="assign">指派對象</label>
-      <!-- b4-form-check-inline-->
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_0" value="爸爸" {if "爸爸"|in_array:$content.assign}checked="checked"{/if}>爸爸
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_1" value="媽媽" {if "媽媽"|in_array:$content.assign}checked="checked"{/if}>媽媽
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_2" value="哥哥" {if "哥哥"|in_array:$content.assign}checked="checked"{/if}>哥哥
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_3" value="妹妹" {if "妹妹"|in_array:$content.assign}checked="checked"{/if}>妹妹
-        </label>
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="assign[]" id="assign_4" value="我" {if "我"|in_array:$content.assign}checked="checked"{/if}>我
-        </label>
-      </div>
-  </div>
+<div class="form-group">
+    <label for="assign">指派對象</label>
+    <!-- b4-form-check-inline-->
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_0" value="爸爸" {if "爸爸"|in_array:$content.assign_arr}checked="checked"{/if}>爸爸
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_1" value="媽媽" {if "媽媽"|in_array:$content.assign_arr}checked="checked"{/if}>媽媽
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_2" value="哥哥" {if "哥哥"|in_array:$content.assign_arr}checked="checked"{/if}>哥哥
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_3" value="妹妹" {if "妹妹"|in_array:$content.assign_arr}checked="checked"{/if}>妹妹
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_4" value="我" {if "我"|in_array:$content.assign_arr}checked="checked"{/if}>我
+      </label>
+    </div>
+</div>
 
   <div class="form-group">
       <label for="done">是否完成</label>
