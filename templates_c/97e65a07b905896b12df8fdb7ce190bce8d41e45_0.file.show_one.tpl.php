@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-19 08:50:00
+/* Smarty version 3.1.34-dev-7, created on 2020-07-08 02:20:39
   from 'E:\UniServerZ\www\templates\show_one.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eec6e28771079_54799594',
+  'unifunc' => 'content_5f051f67675bc1_51958321',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '97e65a07b905896b12df8fdb7ce190bce8d41e45' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\show_one.tpl',
-      1 => 1592552394,
+      1 => 1592553015,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eec6e28771079_54799594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f051f67675bc1_51958321 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
   <div class="jumbotron">
     <h2 class="text-center"><a href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
@@ -98,7 +98,7 @@ function content_5eec6e28771079_54799594 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="text-right">
       <a href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
-?op=delet&sn=<?php echo $_smarty_tpl->tpl_vars['content']->value['sn'];?>
+?op=delete&sn=<?php echo $_smarty_tpl->tpl_vars['content']->value['sn'];?>
 " class="btn btn-danger">刪除</a>
       <a href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 ?op=post_form&sn=<?php echo $_smarty_tpl->tpl_vars['content']->value['sn'];?>

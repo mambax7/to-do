@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-19 04:38:24
+/* Smarty version 3.1.34-dev-7, created on 2020-07-08 02:20:36
   from 'E:\UniServerZ\www\templates\error.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eec33307fadc6_87861289',
+  'unifunc' => 'content_5f051f643b6641_44763285',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_5eec33307fadc6_87861289 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f051f643b6641_44763285 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <?php if ($_smarty_tpl->tpl_vars['refresh_url']->value) {?><meta http-equiv="refresh" content="2; url=<?php echo $_smarty_tpl->tpl_vars['refresh_url']->value;?>

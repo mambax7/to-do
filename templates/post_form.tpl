@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../class/My97DatePicker/WdatePicker.js"></script>
 <form action="{$action}" method="post" id="myForm" role="form">
   <!-- b4-form-group-text -->
   <div class="form-group">
@@ -11,7 +12,7 @@
   </div>
   <div class="form-group">
     <label for="title">到期日</label>
-    <input type="text" name="end" id="end" class="form-control" placeholder="到期日" value="{$content.end}">
+    <input type="text" name="end" id="end" class="form-control" value="{$content.end}" onClick="WdatePicker({literal}{dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'}{/literal})" placeholder="到期日">
   </div>
   <!-- b4-form-select -->
   <div class="form-group">

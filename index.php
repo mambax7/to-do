@@ -229,7 +229,6 @@ switch ($op) {
 //刪除資料
     case "delete":
         delete($sn);
-
         break;
     default:
         if (empty($sn)) {

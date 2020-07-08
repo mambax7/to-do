@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-19 04:17:22
+/* Smarty version 3.1.34-dev-7, created on 2020-07-08 02:20:11
   from 'E:\UniServerZ\www\templates\post_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eec2e42d08e90_06913372',
+  'unifunc' => 'content_5f051f4b6c5e68_70679198',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fd0ecaa6c707248a2d992e20fc808f5cdfdf56' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\post_form.tpl',
-      1 => 1592536628,
+      1 => 1594171205,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eec2e42d08e90_06913372 (Smarty_Internal_Template $_smarty_tpl) {
-?><form action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+function content_5f051f4b6c5e68_70679198 (Smarty_Internal_Template $_smarty_tpl) {
+echo '<script'; ?>
+ type="text/javascript" src="../class/My97DatePicker/WdatePicker.js"><?php echo '</script'; ?>
+>
+<form action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 " method="post" id="myForm" role="form">
   <!-- b4-form-group-text -->
   <div class="form-group">
@@ -37,8 +40,8 @@ function content_5eec2e42d08e90_06913372 (Smarty_Internal_Template $_smarty_tpl)
   </div>
   <div class="form-group">
     <label for="title">到期日</label>
-    <input type="text" name="end" id="end" class="form-control" placeholder="到期日" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
-">
+    <input type="text" name="end" id="end" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
+" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'})" placeholder="到期日">
   </div>
   <!-- b4-form-select -->
   <div class="form-group">
