@@ -19,4 +19,6 @@ $db = link_db();
 // 一維陣列
 $navbar = ['home' => "回首頁", 'post' => "發布待辦事項"];
 $smarty->assign('navbar', $navbar);
+// 今日到期事項
+$smarty->assign('dueToday', count_dueToday());
 $content = [];

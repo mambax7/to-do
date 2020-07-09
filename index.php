@@ -148,7 +148,7 @@ function list_all()
     $sql = "select * from `list` order by priority,end";
 
     include_once "class/PageBar.php";
-    $PageBar = getPageBar($db, $sql, 1, 10);
+    $PageBar = getPageBar($db, $sql, 20, 10);
     $bar     = $PageBar['bar'];
     $sql     = $PageBar['sql'];
     $total   = $PageBar['total'];
@@ -230,6 +230,7 @@ function delete($sn)
         redirect_page('刪除成功', 'index.php', '成功提示頁');
     }
 }
+
 /********************流程判斷*********************/
 // 變數過濾
 $op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";

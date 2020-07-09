@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 06:35:41
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 08:49:12
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06acadb6b140_49379467',
+  'unifunc' => 'content_5f06cbf8c99994_52026880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1594258467,
+      1 => 1594280921,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:show_one.tpl' => 1,
   ),
 ),false)) {
-function content_5f06acadb6b140_49379467 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06cbf8c99994_52026880 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -67,7 +67,8 @@ function content_5f06acadb6b140_49379467 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <div class="col-sm-9">
             <ul>
-                <li>今天到期：1</li>
+                <li>今天到期：<?php echo $_smarty_tpl->tpl_vars['dueToday']->value;?>
+</li>
                 <li>逾期：2</li>
             </ul>
         </div>

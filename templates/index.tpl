@@ -34,7 +34,7 @@
         </div>
         <div class="col-sm-9">
             <ul>
-                <li>今天到期：1</li>
+                <li>今天到期：{$dueToday}</li>
                 <li>逾期：2</li>
             </ul>
         </div>

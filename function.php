@@ -36,3 +36,17 @@ function checkDateIsValid($date, $formats = array("Y-m-d", "Y/m/d"))
 
     return false;
 }
+
+//今日到期
+function count_dueToday()
+{
+    global $db;
+    $today = date("Y-m-d");
+    $sql   = "select count(`sn`) as count from list where `end` ='{$today}' ";
+
+    if (!$result = $db->query($sql)) {
+        die(redirect_page($db->error));
+    }
+    list($count) = $result->fetch_row();
+    return $count;
+}
