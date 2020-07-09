@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 03:36:28
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 07:13:06
   from 'E:\UniServerZ\www\templates\post_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0682acd1dcb4_63159047',
+  'unifunc' => 'content_5f06b572ea1903_88698610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fd0ecaa6c707248a2d992e20fc808f5cdfdf56' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\post_form.tpl',
-      1 => 1594262185,
+      1 => 1594275181,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0682acd1dcb4_63159047 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06b572ea1903_88698610 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript" src="../class/My97DatePicker/WdatePicker.js"><?php echo '</script'; ?>
 >
@@ -30,7 +30,7 @@ echo '<script'; ?>
   <div class="form-group">
     <label for="title">待辦事項</label>
     <input type="text" name="title" id="title" class="form-control" placeholder="待辦事項" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['title'];?>
-">
+" minlength="1" maxlength="10" required>
   </div>
   <!-- b4-form-texarea -->
   <div class="form-group">
@@ -43,7 +43,9 @@ echo '<script'; ?>
   <div class="form-group">
     <label for="title">到期日</label>
     <input type="text" name="end" id="end" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
-" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'})" placeholder="到期日">
+" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'})" placeholder="到期日YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required>
+    <!-- <input type="text" name="end" id="end" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
+" placeholder="到期日 YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required> -->
   </div>
   <!-- b4-form-select -->
   <div class="form-group">

@@ -3,7 +3,7 @@
   <!-- b4-form-group-text -->
   <div class="form-group">
     <label for="title">待辦事項</label>
-    <input type="text" name="title" id="title" class="form-control" placeholder="待辦事項" value="{$content.title}">
+    <input type="text" name="title" id="title" class="form-control" placeholder="待辦事項" value="{$content.title}" minlength="1" maxlength="10" required>
   </div>
   <!-- b4-form-texarea -->
   <div class="form-group">
@@ -13,7 +13,8 @@
   </div>
   <div class="form-group">
     <label for="title">到期日</label>
-    <input type="text" name="end" id="end" class="form-control" value="{$content.end}" onClick="WdatePicker({literal}{dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'}{/literal})" placeholder="到期日">
+    <!-- <input type="text" name="end" id="end" class="form-control" value="{$content.end}" onClick="WdatePicker({literal}{dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'}{/literal})" placeholder="到期日YYYY-MM-DD"> -->
+    <input type="text" name="end" id="end" class="form-control" value="{$content.end}" placeholder="到期日 YYYY-MM-DD" pattern="{literal}(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31)){/literal}" required>
   </div>
   <!-- b4-form-select -->
   <div class="form-group">

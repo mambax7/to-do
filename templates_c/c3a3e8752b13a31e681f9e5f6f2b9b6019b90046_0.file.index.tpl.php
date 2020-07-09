@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 02:48:25
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 06:35:41
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f067769ccaab1_33265699',
+  'unifunc' => 'content_5f06acadb6b140_49379467',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:show_one.tpl' => 1,
   ),
 ),false)) {
-function content_5f067769ccaab1_33265699 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06acadb6b140_49379467 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
