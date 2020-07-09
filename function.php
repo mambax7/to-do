@@ -38,11 +38,11 @@ function checkDateIsValid($date, $formats = array("Y-m-d", "Y/m/d"))
 }
 
 //今日到期
-function count_dueToday()
+function count_due($operator = '=')
 {
     global $db;
     $today = date("Y-m-d");
-    $sql   = "select count(`sn`) as count from list where `end` ='{$today}' ";
+    $sql   = "select count(`sn`) as count from list where `end`{$operator}'{$today}'";
 
     if (!$result = $db->query($sql)) {
         die(redirect_page($db->error));
