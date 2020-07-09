@@ -144,9 +144,9 @@ function check_error()
 function list_all()
 {
     global $db, $smarty, $content;
-
-    $sql = "select * from `list` order by priority,end";
-
+    $today = date("Y-m-d");
+    $sql   = "select * from `list` where done='0' order by priority,end";
+    // die($sql);
     include_once "class/PageBar.php";
     $PageBar = getPageBar($db, $sql, 20, 10);
     $bar     = $PageBar['bar'];
