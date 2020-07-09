@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-sm-3">
             <p>
-              日期：2020/06/08
+              日期：{$smarty.now|date_format:"%Y-%m-%d"}
             </p>
         </div>
         <div class="col-sm-9">

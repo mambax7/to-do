@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 09:15:34
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 09:27:12
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06d2265c3ee2_30265502',
+  'unifunc' => 'content_5f06d4e0589c61_15094358',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1594282530,
+      1 => 1594283226,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:show_one.tpl' => 1,
   ),
 ),false)) {
-function content_5f06d2265c3ee2_30265502 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
+function content_5f06d4e0589c61_15094358 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'E:\\UniServerZ\\www\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+?>
+<!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
   <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -67,7 +69,8 @@ function content_5f06d2265c3ee2_30265502 (Smarty_Internal_Template $_smarty_tpl)
     <div class="row">
         <div class="col-sm-3">
             <p>
-              日期：2020/06/08
+              日期：<?php echo smarty_modifier_date_format(time(),"%Y-%m-%d");?>
+
             </p>
         </div>
         <div class="col-sm-9">
