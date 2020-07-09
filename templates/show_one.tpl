@@ -16,7 +16,8 @@
             描述
         </label>
         <div class="col-sm-9">
-            {$content.directions|nl2br}
+            <!-- {$content.directions|nl2br} -->
+            {$content.directions}
         </div>
     </div>
 

@@ -202,9 +202,9 @@ function find_one($sn = "")
 
     } else {
         //過濾變數
-        $data['title']      = htmlspecialchars($data['title'], ENT_QUOTES);
-        $data['directions'] = htmlspecialchars($data['directions'], ENT_QUOTES);
-        $data['priority']   = filter_var($data['priority'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $data['title'] = htmlspecialchars($data['title'], ENT_QUOTES);
+        // $data['directions'] = htmlspecialchars($data['directions'], ENT_QUOTES);
+        $data['priority'] = filter_var($data['priority'], FILTER_SANITIZE_SPECIAL_CHARS);
         // 複選框$data['assign']
         $data['assign_arr'] = explode(';', $data['assign']);
         // die(var_dump($data));
