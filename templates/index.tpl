@@ -22,6 +22,9 @@
                 <li class="nav-item {if $op=='post_form'}active{/if}">
                     <a class="nav-link" href="{$action}?op=post_form">{$navbar.post}</a>
                 </li>
+                <li class="nav-item {if $op=='done'}active{/if}">
+                  <a class="nav-link" href="{$action}?op=done">{$navbar.done}</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -45,7 +48,7 @@
       {include file="show_one.tpl"}
     {else}
         {if $content}
-          <h2>待辦清單<small>（共 {$total} 個事項）</small></h2>
+          <h2>{if $op=="done"}完成清單{else}待辦清單{/if}<small>（共 {$total} 個事項）</small></h2>
           <div class="table-responsive">
               <table class="table table-striped table-bordered table-hover table-sm">
                 <thead  class="thead-dark">

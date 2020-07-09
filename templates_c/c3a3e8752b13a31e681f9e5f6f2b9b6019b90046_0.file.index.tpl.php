@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 08:59:05
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 09:15:34
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06ce49b15206_32958608',
+  'unifunc' => 'content_5f06d2265c3ee2_30265502',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1594281537,
+      1 => 1594282530,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:show_one.tpl' => 1,
   ),
 ),false)) {
-function content_5f06ce49b15206_32958608 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06d2265c3ee2_30265502 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -55,6 +55,11 @@ function content_5f06ce49b15206_32958608 (Smarty_Internal_Template $_smarty_tpl)
 ?op=post_form"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['post'];?>
 </a>
                 </li>
+                <li class="nav-item <?php if ($_smarty_tpl->tpl_vars['op']->value == 'done') {?>active<?php }?>">
+                  <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+?op=done"><?php echo $_smarty_tpl->tpl_vars['navbar']->value['done'];?>
+</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -82,7 +87,7 @@ function content_5f06ce49b15206_32958608 (Smarty_Internal_Template $_smarty_tpl)
 ?>
     <?php } else { ?>
         <?php if ($_smarty_tpl->tpl_vars['content']->value) {?>
-          <h2>待辦清單<small>（共 <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+          <h2><?php if ($_smarty_tpl->tpl_vars['op']->value == "done") {?>完成清單<?php } else { ?>待辦清單<?php }?><small>（共 <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
  個事項）</small></h2>
           <div class="table-responsive">
               <table class="table table-striped table-bordered table-hover table-sm">

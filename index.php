@@ -140,6 +140,7 @@ function check_error()
         exit();
     }
 }
+
 // 列出所有
 function list_all()
 {
@@ -231,15 +232,60 @@ function delete($sn)
     }
 }
 
+// 列出所有完成的待辦事項清單
+function done()
+{
+    global $db, $smarty, $content;
+    $today = date("Y-m-d");
+    $sql   = "select * from `list` where done='1' order by update_time";
+    // die($sql);
+    include_once "class/PageBar.php";
+    $PageBar = getPageBar($db, $sql, 20, 10);
+    $bar     = $PageBar['bar'];
+    $sql     = $PageBar['sql'];
+    $total   = $PageBar['total'];
+
+    if (!$result = $db->query($sql)) {
+        die(redirect_page($db->error));
+    }
+
+    $i       = 0;
+    $content = [];
+    while (list($sn, $title, $directions, $end, $priority, $assign, $done, $create_time, $update_time) = $result->fetch_row()) {
+
+        //過濾變數
+        $title      = htmlspecialchars($title, ENT_QUOTES);
+        $directions = htmlspecialchars($directions, ENT_QUOTES);
+        $priority   = filter_var($priority, FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $content[$i]['sn']          = $sn;
+        $content[$i]['title']       = $title;
+        $content[$i]['directions']  = $directions;
+        $content[$i]['end']         = $end;
+        $content[$i]['priority']    = $priority;
+        $content[$i]['assign']      = $assign;
+        $content[$i]['done']        = $done;
+        $content[$i]['create_time'] = $create_time;
+        $content[$i]['update_time'] = $update_time;
+        $i++;
+    }
+
+    $smarty->assign('total', $total);
+    $smarty->assign('bar', $bar);
+    // die(var_dump($bar));
+}
 /********************流程判斷*********************/
 // 變數過濾
 $op = isset($_REQUEST['op']) ? filter_var($_REQUEST['op'], FILTER_SANITIZE_SPECIAL_CHARS) : "";
 $sn = isset($_REQUEST['sn']) ? (int) $_REQUEST['sn'] : "";
 switch ($op) {
+    case 'done':
+        done();
+        break;
     case 'post_form':
         post_form();
         break;
-//刪除資料
+    //刪除資料
     case "delete":
         delete($sn);
         break;
