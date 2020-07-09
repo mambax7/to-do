@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 07:13:06
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 08:00:07
   from 'E:\UniServerZ\www\templates\post_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06b572ea1903_88698610',
+  'unifunc' => 'content_5f06c077142196_24875288',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fd0ecaa6c707248a2d992e20fc808f5cdfdf56' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\post_form.tpl',
-      1 => 1594275181,
+      1 => 1594278002,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,39 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f06b572ea1903_88698610 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06c077142196_24875288 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript" src="../class/My97DatePicker/WdatePicker.js"><?php echo '</script'; ?>
+>
+<link rel="stylesheet" href="../class/formValidator/css/validationEngine.jquery.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../class/formValidator/css/template.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+<?php echo '<script'; ?>
+ src="../class/formValidator/js/languages/jquery.validationEngine-zh_TW.js" type="text/javascript"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="../class/formValidator/js/jquery.validationEngine.js" type="text/javascript"><?php echo '</script'; ?>
+>
+
+<?php echo '<script'; ?>
+ type="text/javascript">
+  $(document).ready(function() {
+      $("#myForm").validationEngine({
+          inlineValidation: true,
+          success :  false,
+          failure : function() {}
+      });
+  });
+<?php echo '</script'; ?>
 >
 <form action="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 " method="post" id="myForm" role="form">
   <!-- b4-form-group-text -->
   <div class="form-group">
     <label for="title">待辦事項</label>
-    <input type="text" name="title" id="title" class="form-control" placeholder="待辦事項" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['title'];?>
-" minlength="1" maxlength="10" required>
+    <!-- <input type="text" name="title" id="title" class="form-control" placeholder="待辦事項" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['title'];?>
+" minlength="1" maxlength="10" required> -->
+    <input type="text" name="title" id="title" class="form-control validate[required,, min[1], max[10]]" placeholder="待辦事項" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['title'];?>
+">
   </div>
   <!-- b4-form-texarea -->
   <div class="form-group">
@@ -42,8 +64,8 @@ echo '<script'; ?>
   </div>
   <div class="form-group">
     <label for="title">到期日</label>
-    <input type="text" name="end" id="end" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
-" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'})" placeholder="到期日YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required>
+    <input type="text" name="end" id="end" class="form-control validate[required , custom[date]]" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
+" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-%d',minDate:'%y-%M-%d'})" placeholder="到期日YYYY-MM-DD">
     <!-- <input type="text" name="end" id="end" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['content']->value['end'];?>
 " placeholder="到期日 YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required> -->
   </div>
@@ -62,19 +84,19 @@ echo '<script'; ?>
     <!-- b4-form-check-inline-->
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_0" value="爸爸" <?php if (in_array("爸爸",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>爸爸
+        <input class="form-check-input validate[minCheckbox[1]]" type="checkbox" name="assign[]" id="assign_0" value="爸爸" <?php if (in_array("爸爸",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>爸爸
       </label>
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_1" value="媽媽" <?php if (in_array("媽媽",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>媽媽
+        <input class="form-check-input validate[minCheckbox[1]" type="checkbox" name="assign[]" id="assign_1" value="媽媽" <?php if (in_array("媽媽",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>媽媽
       </label>
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_2" value="哥哥" <?php if (in_array("哥哥",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>哥哥
+        <input class="form-check-input validate[minCheckbox[1]" type="checkbox" name="assign[]" id="assign_2" value="哥哥" <?php if (in_array("哥哥",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>哥哥
       </label>
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_3" value="妹妹" <?php if (in_array("妹妹",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>妹妹
+        <input class="form-check-input validate[minCheckbox[1]" type="checkbox" name="assign[]" id="assign_3" value="妹妹" <?php if (in_array("妹妹",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>妹妹
       </label>
       <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="assign[]" id="assign_4" value="我" <?php if (in_array("我",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>我
+        <input class="form-check-input validate[minCheckbox[1]" type="checkbox" name="assign[]" id="assign_4" value="我" <?php if (in_array("我",$_smarty_tpl->tpl_vars['content']->value['assign_arr'])) {?>checked="checked"<?php }?>>我
       </label>
     </div>
 </div>
