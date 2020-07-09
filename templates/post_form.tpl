@@ -8,7 +8,8 @@
   <!-- b4-form-texarea -->
   <div class="form-group">
     <label for="directions">描述</label>
-    <textarea id="directions" class="form-control" name="directions" rows="3">{$content.directions}</textarea>
+    <!-- <textarea id="directions" class="form-control" name="directions" rows="3">{$content.directions}</textarea> -->
+    <textarea id="editor" class="form-control" name="directions" >{$content.directions}</textarea>
   </div>
   <div class="form-group">
     <label for="title">到期日</label>
@@ -65,3 +66,60 @@
   <input type="submit" name="send" value="儲存" class="btn btn-primary" />
 </div>
 </form>
+
+<style>
+  .ck-editor__editable {
+      min-height: 8rem;
+  }
+</style>
+<script src="../class/ckeditor5/build/ckeditor.js"></script>
+<script>ClassicEditor
+  .create( document.querySelector( '#editor' ), {
+
+    toolbar: {
+      items: [
+        'heading',
+        '|',
+        'bold',
+        'italic',
+        'link',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'indent',
+        'outdent',
+        '|',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo',
+        'fontBackgroundColor',
+        'fontColor',
+        'fontSize',
+        'fontFamily',
+        'highlight',
+        'horizontalLine'
+      ]
+    },
+    language: 'zh',
+    table: {
+      contentToolbar: [
+        'tableColumn',
+        'tableRow',
+        'mergeTableCells'
+      ]
+    },
+    licenseKey: '',
+
+  } )
+  .then( editor => {
+    window.editor = editor;
+  } )
+  .catch( error => {
+    console.error( 'Oops, something gone wrong!' );
+    console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
+    console.warn( 'Build id: dygf44s5ml6x-yvi4tsrqc2ex' );
+    console.error( error );
+  } )
+  ;
+</script>

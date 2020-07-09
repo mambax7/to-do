@@ -144,12 +144,19 @@ function list_all()
     global $db, $smarty, $content;
 
     $sql = "select * from `list` order by priority,end";
+
+    include_once "class/PageBar.php";
+    $PageBar = getPageBar($db, $sql, 1, 10);
+    $bar     = $PageBar['bar'];
+    $sql     = $PageBar['sql'];
+    $total   = $PageBar['total'];
+
     if (!$result = $db->query($sql)) {
         die(redirect_page($db->error));
     }
 
-    $content = [];
     $i       = 0;
+    $content = [];
     while (list($sn, $title, $directions, $end, $priority, $assign, $done, $create_time, $update_time) = $result->fetch_row()) {
 
         //過濾變數
@@ -168,7 +175,10 @@ function list_all()
         $content[$i]['update_time'] = $update_time;
         $i++;
     }
-    // die(var_dump($content));
+
+    $smarty->assign('total', $total);
+    $smarty->assign('bar', $bar);
+    // die(var_dump($bar));
 }
 
 //以流水號取得某筆資料

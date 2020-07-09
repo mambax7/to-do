@@ -45,6 +45,7 @@
       {include file="show_one.tpl"}
     {else}
         {if $content}
+          <h2>待辦清單<small>（共 {$total} 個事項）</small></h2>
           <div class="table-responsive">
               <table class="table table-striped table-bordered table-hover table-sm">
                 <thead  class="thead-dark">
@@ -82,6 +83,7 @@
                 </tbody>
               </table>
           </div>
+          {$bar}
         {else}
           <div class="jumbotron text-center">
             <a class="btn btn-info" href="{$action}?op=post_form" role="button">新增待辦事項</a>

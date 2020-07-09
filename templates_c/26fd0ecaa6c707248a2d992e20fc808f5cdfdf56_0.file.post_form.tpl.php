@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-08 02:20:11
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 03:36:28
   from 'E:\UniServerZ\www\templates\post_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f051f4b6c5e68_70679198',
+  'unifunc' => 'content_5f0682acd1dcb4_63159047',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26fd0ecaa6c707248a2d992e20fc808f5cdfdf56' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\post_form.tpl',
-      1 => 1594171205,
+      1 => 1594262185,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f051f4b6c5e68_70679198 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0682acd1dcb4_63159047 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript" src="../class/My97DatePicker/WdatePicker.js"><?php echo '</script'; ?>
 >
@@ -35,7 +35,9 @@ echo '<script'; ?>
   <!-- b4-form-texarea -->
   <div class="form-group">
     <label for="directions">描述</label>
-    <textarea id="directions" class="form-control" name="directions" rows="3"><?php echo $_smarty_tpl->tpl_vars['content']->value['directions'];?>
+    <!-- <textarea id="directions" class="form-control" name="directions" rows="3"><?php echo $_smarty_tpl->tpl_vars['content']->value['directions'];?>
+</textarea> -->
+    <textarea id="editor" class="form-control" name="directions" ><?php echo $_smarty_tpl->tpl_vars['content']->value['directions'];?>
 </textarea>
   </div>
   <div class="form-group">
@@ -96,5 +98,67 @@ echo '<script'; ?>
 ">
   <input type="submit" name="send" value="儲存" class="btn btn-primary" />
 </div>
-</form><?php }
+</form>
+
+<style>
+  .ck-editor__editable {
+      min-height: 8rem;
+  }
+</style>
+<?php echo '<script'; ?>
+ src="../class/ckeditor5/build/ckeditor.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>ClassicEditor
+  .create( document.querySelector( '#editor' ), {
+
+    toolbar: {
+      items: [
+        'heading',
+        '|',
+        'bold',
+        'italic',
+        'link',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'indent',
+        'outdent',
+        '|',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo',
+        'fontBackgroundColor',
+        'fontColor',
+        'fontSize',
+        'fontFamily',
+        'highlight',
+        'horizontalLine'
+      ]
+    },
+    language: 'zh',
+    table: {
+      contentToolbar: [
+        'tableColumn',
+        'tableRow',
+        'mergeTableCells'
+      ]
+    },
+    licenseKey: '',
+
+  } )
+  .then( editor => {
+    window.editor = editor;
+  } )
+  .catch( error => {
+    console.error( 'Oops, something gone wrong!' );
+    console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
+    console.warn( 'Build id: dygf44s5ml6x-yvi4tsrqc2ex' );
+    console.error( error );
+  } )
+  ;
+<?php echo '</script'; ?>
+>
+<?php }
 }

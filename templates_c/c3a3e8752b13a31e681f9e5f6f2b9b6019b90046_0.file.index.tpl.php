@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-08 01:59:57
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 02:48:25
   from 'E:\UniServerZ\www\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f051a8d345d15_35760125',
+  'unifunc' => 'content_5f067769ccaab1_33265699',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a3e8752b13a31e681f9e5f6f2b9b6019b90046' => 
     array (
       0 => 'E:\\UniServerZ\\www\\templates\\index.tpl',
-      1 => 1592553020,
+      1 => 1594258467,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:show_one.tpl' => 1,
   ),
 ),false)) {
-function content_5f051a8d345d15_35760125 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f067769ccaab1_33265699 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-TW">
   <!-- 引入檔頭 -->
@@ -80,6 +80,8 @@ function content_5f051a8d345d15_35760125 (Smarty_Internal_Template $_smarty_tpl)
 ?>
     <?php } else { ?>
         <?php if ($_smarty_tpl->tpl_vars['content']->value) {?>
+          <h2>待辦清單<small>（共 <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+ 個事項）</small></h2>
           <div class="table-responsive">
               <table class="table table-striped table-bordered table-hover table-sm">
                 <thead  class="thead-dark">
@@ -135,6 +137,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </tbody>
               </table>
           </div>
+          <?php echo $_smarty_tpl->tpl_vars['bar']->value;?>
+
         <?php } else { ?>
           <div class="jumbotron text-center">
             <a class="btn btn-info" href="<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
