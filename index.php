@@ -11,26 +11,28 @@ function post_form()
             if ($_POST['next_op'] == "add") {
                 $sn = add();
                 if (empty($sn)) {
-                    $_message   = "新增失敗";
-                    $page_title = '錯誤提示頁';
+                    $_message    = "新增失敗";
+                    $page_title  = '錯誤提示頁';
+                    $refresh_url = 'index.php';
                 } else {
-                    $_message   = "新增成功!";
-                    $page_title = '成功提示頁';
+                    $_message    = "新增成功!";
+                    $page_title  = '成功提示頁';
+                    $refresh_url = 'index.php?sn=' . $sn;
                 }
-
-                $refresh_url = 'index.php';
             }
 
             if ($_POST['next_op'] == "update") {
                 $sn = update();
                 if (empty($sn)) {
-                    $_message   = "更新失敗";
-                    $page_title = '錯誤提示頁';
+                    $_message    = "更新失敗";
+                    $page_title  = '錯誤提示頁';
+                    $refresh_url = 'index.php';
                 } else {
-                    $_message   = "更新成功!";
-                    $page_title = '成功提示頁';
+                    $_message    = "更新成功!";
+                    $page_title  = '成功提示頁';
+                    $refresh_url = 'index.php?sn=' . $sn;
                 }
-                $refresh_url = 'index.php?sn=' . $sn;
+
             }
         }
         redirect_page($_message, $refresh_url, $page_title);
